@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="ToDoListApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>庞伟湛-ToDoList</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <script src="scripts/angular.js"></script>
+
+</head>
+<body ng-controller="ToDoListController">
+    <div>
+        <label for="">Search:</label>
+        <input type="text" ng-model="sortString"/>
+    </div>
+
+    <div>
+        <label for="">Add:</label>
+        <input type="text" ng-model="newItem"/>
+        <button ng-click="add()" class="btn btn-add">+</button>
+    </div>
+
+    <!--<table>-->
+        <!--<tr ng-repeat="item in items | filter:sortString | limitTo:count" ng-class="{even:!$even, odd:!$odd}" id="{{'item' + $index}}}">-->
+            <!--<td class="index">{{$index+1}}</td>-->
+            <!--<td ng-show="!item.isModify">-->
+                <!--<span>{{item.action}}</span>-->
+                <!--<button ng-click="item.isModify=!item.isModify" class="btn btn-normal">修改</button>-->
+            <!--</td>-->
+            <!--<td ng-show="item.isModify">-->
+                <!--<input type="text" ng-model="modifyString" name="{{item.action}}"/>-->
+                <!--<button ng-click="modify($index, modifyString)" class="btn btn-normal">确定</button>-->
+            <!--</td>-->
+            <!--<td><button ng-click="delete($index)" class="btn btn-delete">X</button></td>-->
+        <!--</tr>-->
+    <!--</table>-->
+
+
+
+    <ul>
+        <li ng-repeat="item in items | filter:sortString | limitTo: count" ng-class="{even:!$even, odd:!$odd}" id="{{'item' + $index}}}">
+            <div class="index repeat">{{$index+1}}</div>
+            <div class="repeat div-update" ng-style="{display:!item.isUpdate && 'inline-block' || 'none'}">
+                <span>{{item.action}}</span>
+                <button ng-click="item.isUpdate=!item.isUpdate" class="btn btn-normal">修改</button>
+            </div>
+            <div class="repeat div-update" ng-style="{display:item.isUpdate && 'inline-block' || 'none'}">
+                <input type="text" ng-model="updateString"/>
+                <button ng-click="update($index, updateString)" class="btn btn-normal">确定</button>
+            </div>
+            <div class="repeat"><button ng-click="delete($index)" class="btn btn-delete">X</button></div>
+        </li>
+    </ul>
+
+    <div>
+        <button class="btn btn-load" ng-click="loadMore()" ng-show="!isEnd">加载更多...</button>
+    </div>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>

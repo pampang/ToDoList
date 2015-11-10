@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial,sans-serif;
+}
+
+div{
+    margin: 5px;
+    width: 300px;
+}
+
+label{
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+
+
+
+.index{
+    display: inline-block;
+    width: 20px;
+    line-height: 20px;
+    background: #aaaa66;
+    text-align: center;
+}
+
+.btn{
+    height: 20px;
+    line-height: 20px;
+    border: none;
+}
+
+.btn-add{
+    width: 20px;
+    border-radius: 100%;
+    background: #66ee66;
+}
+
+.btn-delete{
+    width: 20px;
+    border-radius: 100%;
+    background: #ee6666;
+}
+
+.btn-normal{
+    width: 50px;
+    border-radius: 5px;
+    float: right;
+}
+.btn-load{
+    width: 80px;
+    border-radius: 5px;
+}
+input{
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.repeat{
+    display: inline-block;
+    margin: 0;
+}
+.div-update{
+    width: 300px;
+}
